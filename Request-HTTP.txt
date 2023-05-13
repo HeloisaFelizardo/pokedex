@@ -1,0 +1,55 @@
+Requisição HTTP
+
+
+- URL: https://pokeapi.co/api/v2/pokemon
+${Endereço}/${path = caminho de identificação do recurso}
+
+Endereço: https://pokeapi.co
+    http://127.0.0.1:8080/
+
+path: /api/v2/pokemon
+
+- REQUEST METHOD: GET | POST | PUT | DELETE |PATCH
+
+- PATCH PARAMS
+https://pokeapi.co/api/v2/pokemon/${ID}
+
+
+- QUERY STRING
+
+https://pokeapi.co/api/v2/pokemon/?offset=2&limit=2
+
+- HEADERS
+
+Request Headers
+Configuração de Requisição
+
+Accept-Language:
+pt-BR;q=1,
+pt;q=0.9,
+en-US;q=0.8,
+en;q=0.7
+
+// q se refere ao nível de prioridade sendo o pt-BR prioridade máxima
+
+Response Headers
+Configuração de Resposta
+
+Content-Type:
+application/json; charset=utf-8
+
+- BODY
+Representa o dado que queremos trafegar na Requisição dependendo do tipo de Requisição
+
+Request Body
+{
+    'name': 'Test'
+}
+
+MUITO IMPORTANTE
+
+STATUS CODE: 200 OK
+
+Response Headers
+
+Response Body
