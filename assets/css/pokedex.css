@@ -65,8 +65,8 @@
 .pokemon {
 	display: flex;
 	flex-direction: column;
-	margin: 0.5rem;
-	padding: 1.5rem 1rem;
+	margin: 0.3rem;
+	padding: 1rem;
 	color: #fff;
 	border-radius: 1rem;
 }
@@ -86,7 +86,6 @@
 .pokemon .detail {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: space-between;
 }
 
@@ -98,7 +97,7 @@
 
 .pokemon .detail .types .type {
 	color: #fff;
-	padding: 0.25rem 0.5rem;
+	padding: 0.4rem 0.5rem;
 	border-radius: 1rem;
 	font-size: 0.625rem;
 	margin: 0.25rem 0;
@@ -113,7 +112,7 @@
 	align-self: flex-end;
 }
 
-@media screen and (min-width: 393px) {
+@media screen and (min-width: 420px) {
 	.pokemons {
 		grid-template-columns: 1fr 1fr;
 	}
