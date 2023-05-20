@@ -2,7 +2,7 @@ const convertPokemonToLi = (pokemon) => {
 	return `
 		<li class="pokemon ${pokemon.type}">
 			<span class="number">#${pokemon.number}</span>
-			<h2 class="name">${pokemon.name}</h2>
+			<span class="name">${pokemon.name}</span>
 
 		<div class="detail">
 			<ol class="types">
