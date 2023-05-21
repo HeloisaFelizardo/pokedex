@@ -9,8 +9,9 @@ body {
 .content {
 	padding: 1rem;
 	background-color: #fff;
-	height: 100vh;
+	height: auto;
 	width: 100vw;
+	border: 1px solid white;
 }
 
 .content h1 {
@@ -21,7 +22,6 @@ body {
 @media screen and (min-width: 992px) {
 	.content {
 		max-width: 992px;
-		height: auto;
 		margin: 1rem auto;
 		border-radius: 1rem;
 	}

@@ -1,9 +1,11 @@
+//Criando o objeto PokeApi
 const pokeApi = {};
 
+//Convertendo os detalhes do Poke Api para nosso modelo
 const convertPokeApiDetailToPokemon = (pokeDetail) => {
 	const pokemon = new Pokemon();
 
-	pokemon.number = pokeDetail.order;
+	pokemon.number = pokeDetail.id;
 	pokemon.name = pokeDetail.name;
 
 	const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
@@ -17,12 +19,14 @@ const convertPokeApiDetailToPokemon = (pokeDetail) => {
 	return pokemon;
 };
 
+//Requisição da lista de detalhes do pokemon em json
 pokeApi.getPokemonDetail = (pokemon) =>
 	fetch(pokemon.url)
 		.then((response) => response.json())
 		.then(convertPokeApiDetailToPokemon);
 
-pokeApi.getPokemons = (offset = 0, limit = 20) => {
+//Requisição da url da Poke Api
+pokeApi.getPokemons = (offset = 0, limit = 5) => {
 	const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
 	return fetch(url)
