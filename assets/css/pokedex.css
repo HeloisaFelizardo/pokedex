@@ -97,7 +97,7 @@
 
 .pokemon .detail .types .type {
 	color: #fff;
-	padding: 0.4rem 1rem;
+	padding: 0.3rem 0.5rem;
 	border-radius: 1rem;
 	font-size: 0.625rem;
 	margin: 0.25rem 0;
@@ -112,7 +112,13 @@
 	align-self: flex-end;
 }
 
-@media screen and (min-width: 420px) {
+@media screen and (max-width: 361px) {
+	.pokemon .detail img {
+		height: 8rem;
+	}
+}
+
+@media screen and (min-width: 361px) {
 	.pokemons {
 		grid-template-columns: 1fr 1fr;
 	}
