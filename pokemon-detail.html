@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="image/x-icon" href="5125favicon.ico" />
+		<title>Pokedex</title>
+
+		<!-- Normalize CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- Font Poppins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto&family=Roboto+Slab&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Nosso CSS -->
+		<link rel="stylesheet" href="/assets/css/global.css" />
+		<link rel="stylesheet" href="/assets/css/pokemon.css" />
+	</head>
+
+	<body>
+		<section class="content pokemon grass">
+			<h1 class="name">Bulbasaur</h1>
+			<span class="number">#1</span>
+
+			<ol class="types">
+				<li class="type grass">Grass</li>
+				<li class="type poison">Poison</li>
+			</ol>
+			<img
+				src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+				alt="Bulbasaur"
+			/>
+
+			<div class="box-details">
+				<ol class="types tab-menu">
+					<li id="about" data-tab="tab1" class="active">About</li>
+					<li id="base-stats" data-tab="tab2">Base Stats</li>
+				</ol>
+				<div class="line"></div>
+				<div id="tab1" class="tab-content">
+					<ol class="table">
+						<li class="table-row">
+							<div class="table-cell">Species</div>
+							<div class="table-cell medium">Seed</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Height</div>
+							<div class="table-cell medium">
+								2'3.6° (0.70 cm)
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Weight</div>
+							<div class="table-cell medium">
+								15.2 lbs (6.9 kg)
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Abilities</div>
+							<div class="table-cell medium">
+								Overgrow, Chlorophyl
+							</div>
+						</li>
+					</ol>
+
+					<h3>Breeding</h3>
+
+					<ol class="table">
+						<li class="table-row">
+							<div class="table-cell">Gender</div>
+							<div class="table-cell medium">♂ 87.5% ♀ 12.5%</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Egg Groups</div>
+							<div class="table-cell medium">Monster</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Egg Cycle</div>
+							<div class="table-cell medium">Grass</div>
+						</li>
+					</ol>
+				</div>
+
+				<div id="tab2" class="tab-content">
+					<ol class="table">
+						<li class="table-row">
+							<div class="table-cell">HP</div>
+							<div class="table-cell medium">45</div>
+							<div class="table-cell medium">
+								<div class="status-bar">
+									<div class="status"></div>
+								</div>
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Attack</div>
+							<div class="table-cell medium">60</div>
+							<div class="table-cell medium">
+								<div class="status-bar">
+									<div class="status"></div>
+								</div>
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Defense</div>
+							<div class="table-cell medium">48</div>
+							<div class="table-cell medium">
+								<div class="status-bar">
+									<div class="status"></div>
+								</div>
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Sp. Atk</div>
+							<div class="table-cell medium">65</div>
+							<div class="table-cell medium">
+								<div class="status-bar">
+									<div class="status"></div>
+								</div>
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Sp. Def</div>
+							<div class="table-cell medium">65</div>
+							<div class="table-cell medium">
+								<div class="status-bar">
+									<div class="status"></div>
+								</div>
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Speed</div>
+							<div class="table-cell medium">45</div>
+							<div class="table-cell medium">
+								<div class="status-bar">
+									<div class="status"></div>
+								</div>
+							</div>
+						</li>
+						<li class="table-row">
+							<div class="table-cell">Total</div>
+							<div class="table-cell medium">317</div>
+							<div class="table-cell medium">
+								<div class="status-bar">
+									<div class="status"></div>
+								</div>
+							</div>
+						</li>
+					</ol>
+
+					<h3>Types Defense</h3>
+					<p>Types effectiveness of each type on Charmander</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Nosso JS -->
+		<script src="/assets/js/pokemon-model.js"></script>
+		<script src="/assets/js/poke-api.js"></script>
+		<script src="/assets/js/tab-menu.js"></script>
+	</body>
+</html>
