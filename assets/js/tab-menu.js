@@ -14,7 +14,6 @@ const eventType = isTouchDevice ? 'touchstart' : 'click';
 
 menuItems.forEach((item) => {
 	item.addEventListener(eventType, () => {
-		eventType.preventDefault();
 		const tabId = item.getAttribute('data-tab');
 
 		// Remove a classe "active" de todos os itens do menu e conteúdos
