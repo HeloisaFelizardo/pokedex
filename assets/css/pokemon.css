@@ -76,7 +76,42 @@ body {
 	background-color: #f9aec7;
 }
 
-.pokemon {
+.modal {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal.show {
+	opacity: 1;
+	visibility: visible;
+}
+.close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	cursor: pointer;
+	border: 1px solid black;
+	background-color: rgb(214, 67, 67);
+	color: white;
+	transition: 0.4s ease;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+.pokemonDetail {
 	color: white;
 	width: 100vw;
 	height: 100vh;
@@ -86,33 +121,33 @@ body {
 	position: relative;
 }
 
-.pokemon .name {
+.pokemonDetail .name {
 	margin: 1.25rem 0 0 0;
 	color: white;
 }
 
-.pokemon .number {
+.pokemonDetail .number {
 	text-align: right;
 }
-.pokemon img {
+.pokemonDetail img {
 	height: 10rem;
 	position: relative;
 	z-index: 2;
 }
 
-.pokemon ol {
+.pokemonDetail ol {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
 
-.pokemon .types {
+.pokemonDetail .types {
 	display: flex;
 	flex-direction: row;
 	margin: 0 0 1.25rem 0;
 }
 
-.pokemon .types .type {
+.pokemonDetail .types .type {
 	color: #fff;
 	padding: 0.25rem 0.5rem;
 	margin: 0 0.5rem 0.25rem 0;
@@ -148,24 +183,30 @@ body {
 	position: relative;
 }
 
-.pokemon .types li {
+.pokemonDetail .types li {
+	padding: 1rem 0 0.938rem 0;
+	color: #d2d3d4;
+	margin-right: 2rem;
+}
+
+.box-details .types li {
 	padding: 1rem 0 0.938rem 0;
 	color: #d2d3d4;
 	cursor: pointer;
 	margin-right: 2rem;
 }
 
-.pokemon .types .active {
+.pokemonDetail .types .active {
 	border-bottom: 1px solid rgba(54, 74, 67, 0.5);
 	font-weight: 700;
 	color: #535957;
 }
 
-.pokemon h3 {
+.pokemonDetail h3 {
 	color: #5d6367;
 }
 
-.pokemon p {
+.pokemonDetail p {
 	margin-top: 0;
 }
 .inactive {
@@ -231,13 +272,13 @@ body {
 }
 
 @media screen and (min-width: 281px) {
-	.pokemon {
+	.pokemonDetail {
 		max-width: 20rem;
 		max-height: 40rem;
 		margin: 1rem;
 		border-radius: 1.563rem;
 	}
-	.pokemon .box-details {
+	.pokemonDetail .box-details {
 		border-radius: 1.563rem;
 	}
 }

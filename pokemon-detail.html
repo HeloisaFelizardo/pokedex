@@ -30,7 +30,9 @@
 	</head>
 
 	<body>
-		<section class="content pokemon grass">
+		<section class="pokemonDetail grass">
+			<button class="close-button">X</button>
+			<!-- Botão de fechamento -->
 			<h1 class="name">Bulbasaur</h1>
 			<span class="number">#1</span>
 
@@ -167,8 +169,41 @@
 		</section>
 
 		<!-- Nosso JS -->
-		<script src="assets/js/pokemon-model.js"></script>
-		<script src="assets/js/poke-api.js"></script>
-		<script src="assets/js/tab-menu.js"></script>
+
+		<script>
+			const isTouchDevice =
+				'ontouchstart' in window ||
+				navigator.maxTouchPoints > 0 ||
+				navigator.msMaxTouchPoints > 0;
+
+			const menuItems = document.querySelectorAll('.tab-menu li');
+			const tabContents = document.querySelectorAll('.tab-content');
+
+			const eventType = isTouchDevice ? 'touchstart' : 'click';
+
+			menuItems.forEach((item) => {
+				item.addEventListener(eventType, () => {
+					const tabId = item.getAttribute('data-tab');
+
+					// Remove a classe "active" de todos os itens do menu e conteúdos
+					menuItems.forEach((item) =>
+						item.classList.remove('active')
+					);
+					tabContents.forEach((content) =>
+						content.classList.remove('show')
+					);
+
+					// Adiciona a classe "active" ao item do menu clicado
+					item.classList.add('active');
+
+					// Exibe o conteúdo da aba correspondente
+					document.getElementById(tabId).classList.add('show');
+				});
+			});
+
+			// Inicia com o primeiro item do menu ativo e exibe o conteúdo correspondente
+			menuItems[0].classList.add('active');
+			document.getElementById('tab1').classList.add('show');
+		</script>
 	</body>
 </html>
