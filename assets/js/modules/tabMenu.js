@@ -2,7 +2,7 @@
 
 Em seguida, usamos eventType ao adicionar o ouvinte de evento aos itens do menu. Dessa forma, ele será definido como 'touchstart' em dispositivos de toque e como 'click' em outros dispositivos. */
 
-function configureModalTabs() {
+export function configureModalTabs() {
 	const isTouchDevice =
 		'ontouchstart' in window ||
 		navigator.maxTouchPoints > 0 ||

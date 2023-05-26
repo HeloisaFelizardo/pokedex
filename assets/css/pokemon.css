@@ -124,6 +124,7 @@ body {
 .pokemonDetail .name {
 	margin: 1.25rem 0 0 0;
 	color: white;
+	text-transform: capitalize;
 }
 
 .pokemonDetail .number {
