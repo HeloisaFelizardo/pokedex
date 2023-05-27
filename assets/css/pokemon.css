@@ -9,7 +9,7 @@ body {
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.8);
 	display: flex;
-	/* justify-content: center; */
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	position: fixed;
@@ -208,4 +208,7 @@ body {
 	.modal {
 		justify-content: center;
 	}
+}
+
+@media screen and (min-width: 380px) {
 }
