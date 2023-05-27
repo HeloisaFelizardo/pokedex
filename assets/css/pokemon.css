@@ -114,33 +114,31 @@ body {
 .pokemonDetail {
 	color: white;
 	width: 100vw;
-	height: 100vh;
 	max-width: 20rem;
-	max-height: 40rem;
 	display: flex;
 	flex-direction: column;
-	padding: 1.25rem;
+
 	position: relative;
 	margin: 1rem;
-	border-radius: 1.563rem;
+	border-radius: 1.6rem;
 }
 
 .pokemonDetail .name {
-	margin: 1.25rem 0 0 0;
+	margin: 1.25rem 1.25rem 0;
 	color: white;
 	text-transform: capitalize;
 }
 
 .pokemonDetail .number {
 	text-align: right;
+	margin-right: 1.25rem;
 }
 .pokemonDetail img {
 	height: 10rem;
 	position: relative;
+	margin-bottom: -20px;
 	z-index: 2;
 	filter: drop-shadow(0 3mm 1mm rgba(83, 89, 87, 0.5));
-
-	/* filter: drop-shadow(0 0 0.75rem rgb(83, 89, 87)); */
 }
 
 .pokemonDetail ol {
@@ -152,7 +150,7 @@ body {
 .pokemonDetail .types {
 	display: flex;
 	flex-direction: row;
-	margin: 0 0 0 0;
+	margin-left: 1.25rem;
 }
 
 .pokemonDetail .types .type {
@@ -184,19 +182,12 @@ body {
 }
 .box-details {
 	background: white;
-	border-top-left-radius: 1.563rem;
-	border-top-right-radius: 1.563rem;
 	color: #989c9d;
 	width: 100%;
-	min-height: 22.8rem;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	top: 16rem;
 	z-index: 1;
-	padding: 1.5rem 2.5rem;
+	padding: 1.5rem;
 	font-size: 0.75rem;
-	border-radius: 1.563rem;
+	border-radius: 1.6rem;
 }
 .box-details .types {
 	margin: 0 0 1.25rem 0;
@@ -217,6 +208,7 @@ body {
 	color: #d2d3d4;
 	cursor: pointer;
 	margin-right: 2rem;
+	user-select: none;
 }
 
 .inactive {
@@ -282,12 +274,6 @@ body {
 }
 
 @media screen and (min-width: 281px) {
-	/* .pokemonDetail {
-		max-width: 20rem;
-		max-height: 40rem;
-		 margin: 1rem; 
-		border-radius: 1.563rem;
-	} */
 	.modal {
 		justify-content: center;
 	}
