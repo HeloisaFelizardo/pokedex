@@ -204,6 +204,19 @@ export default function pokemonRenderHTML() {
 
 			// Adicione o evento de clique ao botão de fechamento
 			closeButton.addEventListener('click', closePokemonModal);
+
+			// Calcula a altura do conteúdo do modal
+			const modalContent = modal.querySelector('.pokemonDetail');
+			const contentHeight = modalContent.offsetHeight;
+
+			// Verifica se a altura do conteúdo ultrapassa a altura da tela
+			const windowHeight = window.innerHeight;
+			if (contentHeight > windowHeight) {
+				// Define a altura máxima do conteúdo para ser igual à altura da tela - um valor de margem
+				const maxHeight = windowHeight - 40; // Ajuste o valor da margem conforme necessário
+				modalContent.style.maxHeight = `${maxHeight}px`;
+				modalContent.style.overflowY = 'auto';
+			}
 		});
 	}
 

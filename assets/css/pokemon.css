@@ -26,8 +26,8 @@ body {
 }
 .close-button {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 5px;
+	right: 5px;
 	width: 2rem;
 	height: 2rem;
 	border-radius: 100%;
