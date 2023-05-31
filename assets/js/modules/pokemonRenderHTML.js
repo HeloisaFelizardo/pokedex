@@ -95,7 +95,7 @@ export default function pokemonRenderHTML() {
 							<li class="table-row">
 								<div class="table-cell">Gender</div>
 								<div class="table-cell medium">
-								♂${pokemon.gender.male}  ♀${pokemon.gender.female} 
+									<span>♂</span> ${pokemon.gender.male}  <span>♀</span> ${pokemon.gender.female} 
 								</div>
 							</li>
 							<li class="table-row">
