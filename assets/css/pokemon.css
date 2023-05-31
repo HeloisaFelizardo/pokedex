@@ -169,13 +169,10 @@ body {
 .status-bar {
 	width: 100%;
 	height: 3px;
-	background-color: rgba(54, 74, 67, 0.1);
 }
 
 .status {
-	width: 50%;
-	height: 100%;
-	background-color: #4caf50;
+	width: 100%;
 }
 
 #tab2 .table {
@@ -202,6 +199,7 @@ body {
 .medium {
 	font-weight: 500;
 	color: #61646a;
+	text-transform: capitalize;
 }
 
 @media screen and (min-width: 281px) {

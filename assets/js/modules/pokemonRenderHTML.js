@@ -44,6 +44,11 @@ export default function pokemonRenderHTML() {
 			const modal = document.createElement('div');
 			modal.classList.add('modal');
 			modal.id = `modal-${pokemonId}`;
+			//Soma dos stats
+			let soma = 0;
+			for (let key in pokemon.baseStats) {
+				soma += pokemon.baseStats[key];
+			}
 			// Configurar o conteúdo do modal, como título, imagem, etc.
 			modal.innerHTML = `
 			<section class="pokemonDetail ${pokemon.type}">
@@ -67,20 +72,20 @@ export default function pokemonRenderHTML() {
 					<div id="tab1" class="tab-content">
 						<ol class="table">
 							<li class="table-row">
-								<div class="table-cell">Species</div>
-								<div class="table-cell medium">Seed</div>
+								<div class="table-cell">Habitat</div>
+								<div class="table-cell medium">${pokemon.habitat}</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Height</div>
-								<div class="table-cell medium">2'3.6° (0.70 cm)</div>
+								<div class="table-cell medium">${pokemon.height}</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Weight</div>
-								<div class="table-cell medium">15.2 lbs (6.9 kg)</div>
+								<div class="table-cell medium"> ${pokemon.weight}</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Abilities</div>
-								<div class="table-cell medium">Overgrow, Chlorophyl</div>
+								<div class="table-cell medium">${pokemon.abilities}</div>
 							</li>
 						</ol>
 
@@ -89,15 +94,17 @@ export default function pokemonRenderHTML() {
 						<ol class="table">
 							<li class="table-row">
 								<div class="table-cell">Gender</div>
-								<div class="table-cell medium">♂ 87.5% ♀ 12.5%</div>
+								<div class="table-cell medium">
+								♂${pokemon.gender.male}  ♀${pokemon.gender.female} 
+								</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Egg Groups</div>
-								<div class="table-cell medium">Monster</div>
+								<div class="table-cell medium">${pokemon.eggGroups}</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Egg Cycle</div>
-								<div class="table-cell medium">Grass</div>
+								<div class="table-cell medium">${pokemon.eggCycle} Steps</div>
 							</li>
 						</ol>
 					</div>
@@ -106,64 +113,76 @@ export default function pokemonRenderHTML() {
 						<ol class="table">
 							<li class="table-row">
 								<div class="table-cell">HP</div>
-								<div class="table-cell medium">45</div>
+								<div class="table-cell medium">${pokemon.baseStats.hp}</div>
 								<div class="table-cell medium">
 									<div class="status-bar">
-										<div class="status"></div>
+										<progress class="status"  max="255" 
+											value="${pokemon.baseStats.hp}">
+										</progress>
 									</div>
 								</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Attack</div>
-								<div class="table-cell medium">60</div>
+								<div class="table-cell medium">${pokemon.baseStats.attack}</div>
 								<div class="table-cell medium">
 									<div class="status-bar">
-										<div class="status"></div>
+										<progress class="status"  max="255" 
+											value="${pokemon.baseStats.attack}">
+										</progress>
 									</div>
 								</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Defense</div>
-								<div class="table-cell medium">48</div>
+								<div class="table-cell medium">${pokemon.baseStats.defense}</div>
 								<div class="table-cell medium">
 									<div class="status-bar">
-										<div class="status"></div>
+										<progress class="status"  max="255" 
+											value="${pokemon.baseStats.defense}">
+										</progress>
 									</div>
 								</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Sp. Atk</div>
-								<div class="table-cell medium">65</div>
+								<div class="table-cell medium">${pokemon.baseStats.specialAttack}</div>
 								<div class="table-cell medium">
 									<div class="status-bar">
-										<div class="status"></div>
+										<progress class="status"  max="255" 
+											value="${pokemon.baseStats.specialAttack}">
+										</progress>
 									</div>
 								</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Sp. Def</div>
-								<div class="table-cell medium">65</div>
+								<div class="table-cell medium">${pokemon.baseStats.specialDefense}</div>
 								<div class="table-cell medium">
 									<div class="status-bar">
-										<div class="status"></div>
+										<progress class="status"  max="255" 
+											value="${pokemon.baseStats.specialDefense}">
+										</progress>
 									</div>
 								</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Speed</div>
-								<div class="table-cell medium">45</div>
+								<div class="table-cell medium">${pokemon.baseStats.speed}</div>
 								<div class="table-cell medium">
 									<div class="status-bar">
-										<div class="status"></div>
+										<progress class="status"  max="255" 
+											value="${pokemon.baseStats.speed}">
+										</progress>
 									</div>
 								</div>
 							</li>
 							<li class="table-row">
 								<div class="table-cell">Total</div>
-								<div class="table-cell medium">317</div>
+								<div class="table-cell medium">${soma}</div>
 								<div class="table-cell medium">
 									<div class="status-bar">
-										<div class="status"></div>
+										<progress class="status" max="600" value="${soma}"></progress>
 									</div>
 								</div>
 							</li>

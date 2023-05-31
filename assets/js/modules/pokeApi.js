@@ -15,6 +15,77 @@ export async function convertPokeApiDetailToPokemon(pokeDetail) {
 
 	pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;
 
+	if (pokeDetail.height) {
+		let typeHeight = 'cm';
+		let height = pokeDetail.height / 10;
+		height >= 1 ? (typeHeight = 'm') : typeHeight;
+		pokemon.height = `${height.toFixed(2)} ${typeHeight}`;
+	}
+
+	if (pokeDetail.weight) {
+		pokemon.weight = `${pokeDetail.weight / 10} kg`;
+	}
+
+	if (pokeDetail.abilities) {
+		pokemon.abilities = pokeDetail.abilities.map(
+			(abilitySlot) => ` ${abilitySlot.ability.name}`
+		);
+	}
+
+	try {
+		const response = await fetch(pokeDetail.species.url);
+		const resp = await response.json();
+
+		if (resp.habitat) {
+			pokemon.habitat = resp.habitat.name;
+		}
+
+		if (resp.gender_rate !== -1) {
+			let female = (resp.gender_rate / 8) * 100;
+			pokemon.gender.male = `${100 - female}%`;
+			pokemon.gender.female = `${female}%`;
+		} else {
+			pokemon.gender.genderless = true;
+		}
+
+		if (resp.egg_groups) {
+			pokemon.eggGroups = resp.egg_groups.map(
+				(eggGroup) => ` ${eggGroup.name}`
+			);
+		}
+
+		if (resp.hatch_counter !== undefined) {
+			pokemon.eggCycle = 255 * (resp.hatch_counter + 1);
+		}
+	} catch (err) {
+		console.error(err);
+	}
+
+	if (pokeDetail.stats) {
+		for (const statSlot of pokeDetail.stats) {
+			switch (statSlot.stat.name) {
+				case 'hp':
+					pokemon.baseStats.hp = statSlot.base_stat;
+					break;
+				case 'attack':
+					pokemon.baseStats.attack = statSlot.base_stat;
+					break;
+				case 'defense':
+					pokemon.baseStats.defense = statSlot.base_stat;
+					break;
+				case 'special-attack':
+					pokemon.baseStats.specialAttack = statSlot.base_stat;
+					break;
+				case 'special-defense':
+					pokemon.baseStats.specialDefense = statSlot.base_stat;
+					break;
+				case 'speed':
+					pokemon.baseStats.speed = statSlot.base_stat;
+					break;
+			}
+		}
+	}
+
 	return pokemon;
 }
 
