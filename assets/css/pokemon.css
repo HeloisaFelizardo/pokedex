@@ -18,7 +18,7 @@ body {
 	right: 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 0.3s ease, visibility 0.3s ease;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 .modal.show {
 	opacity: 1;
@@ -215,7 +215,4 @@ body {
 	.modal {
 		justify-content: center;
 	}
-}
-
-@media screen and (min-width: 380px) {
 }

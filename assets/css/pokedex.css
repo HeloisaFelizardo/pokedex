@@ -61,7 +61,9 @@
 .fairy {
 	background-color: #e592ac;
 }
-
+.close {
+	display: none;
+}
 .pokemon {
 	display: flex;
 	flex-direction: column;
@@ -69,11 +71,13 @@
 	padding: 1rem;
 	border-radius: 1rem;
 	cursor: pointer;
+	transition: 0.2s ease;
 }
 
-.close {
-	display: none;
+.pokemon:hover {
+	transform: scale(1.05);
 }
+
 .pokemon .number {
 	color: #000;
 	opacity: 0.3;
@@ -138,7 +142,7 @@
 	text-transform: uppercase;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 280px) {
 	.pokemons {
 		grid-template-columns: 1fr 1fr;
 	}
